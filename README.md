@@ -3,7 +3,7 @@
 
 Hand Cricket is a game played by kids and students with their friends. Hand Cricket is a game in which two players show scores on their respective fingers where both can bat or bowl. If their both fingers count matches then considered as out and their roles switches
 
-Developed using
+### Developed using
 - Python
 - openCV
 - Mediapipe
@@ -11,4 +11,4 @@ Developed using
 
 Future works involves deploying as a web application and introducing Leaderboards and multiplayer access to the players
 
-# SAMPLE OUTPUT
+## SAMPLE OUTPUT
