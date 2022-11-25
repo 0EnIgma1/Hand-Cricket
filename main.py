@@ -12,7 +12,9 @@ count = 0
 player_score = 0
 ai_score = 0
 score = 0
+level = 0
 winner = 0
+difficult = True
 # winner = 1 if ai won
 # winner = 2 if human won
 cap = cv2.VideoCapture(0)
@@ -155,7 +157,7 @@ while True:
             timer = time.time() - initialTime
             cv2.putText(imgBG,str(int(timer)),(617,405),cv2.FONT_HERSHEY_PLAIN,3,(0,0,0),5)     #dimension, font, size, color, thickness
 
-            if timer>2:
+            if timer>1.5:
                 StateResult = True
                 timer = 0
                 airun = AIrun()
@@ -165,6 +167,7 @@ while True:
                 if out_score==1:
                     BatStart = False
                     buttons = True
+
                     turn_count += 1
                 if turn_count == 2:
                     winner = 1
@@ -178,7 +181,7 @@ while True:
             timer = time.time() - initialTime
             cv2.putText(imgBG,str(int(timer)),(617,405),cv2.FONT_HERSHEY_PLAIN,3,(0,0,0),5)     #dimension, font, size, color, thickness
 
-            if timer>2:
+            if timer>1.5:
                 StateResult = True
                 timer = 0
                 airun = AIrun()
@@ -217,16 +220,30 @@ while True:
     elif winner == 2:
         cv2.putText(imgBG,f"Human won !",(495,700),cv2.FONT_HERSHEY_PLAIN,3,(255,255,255),5)
 
+    if difficult:
+        cv2.putText(imgBG, "Press E - Easy",(535,200),cv2.FONT_HERSHEY_PLAIN,1.5,(255,255,255),2)
+        cv2.putText(imgBG, "Press H - Hard",(535,230),cv2.FONT_HERSHEY_PLAIN,1.5,(255,255,255),2)
+
     cv2.imshow("bg",imgBG)
+
     StateResult = False
 
     key = cv2.waitKey(1)
+
+    if key ==ord("e"):
+        level = 2
+        difficult = False
+    elif key == ord("h"):
+        level = 1
+        difficult = False
+    
     if key == ord("s"):
         out_score = 0
         BatStart = True
         initialTime = time.time()
         StateResult = False
         buttons = False
+        difficult = False
 
     if key == ord("b"):
         out_score = 0
@@ -234,6 +251,7 @@ while True:
         initialTime = time.time()
         StateResult = False
         buttons = False
+        difficult = False
         
     if key & 0xFF == 27 :
         break
