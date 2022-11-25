@@ -18,5 +18,7 @@ https://user-images.githubusercontent.com/87116237/203797982-5dfb9891-7e40-4810-
 
 ### HARD MODE
 
-https://user-images.githubusercontent.com/87116237/203981934-b97f1bb1-f090-4e09-b737-00d28c5908f1.mp4
+https://user-images.githubusercontent.com/87116237/203982041-f81066e1-c76d-44f7-9ff8-88f07fbf0e0e.mp4
+
+
 
